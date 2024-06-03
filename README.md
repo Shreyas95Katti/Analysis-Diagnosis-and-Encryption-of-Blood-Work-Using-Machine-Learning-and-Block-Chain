@@ -1,13 +1,49 @@
-# Multiple-disease-prediction
-We, Team ***Break-A-Leg***, participated in the Weal Club at PESU Hackathon Healthack. The problem statement we chose to tackle was ***"Analysis, Diagnosis and Enryption of Blood Work Using Machine Learning and Block Chain"***. Why choose this problem statement, according to the statistics the society is moving towards home based medical testing systems. As a normal person the first step we would take, after receiving the medical test report is to approach the doctor to diagnose your blood report, this would involve some consultation charges. This is where our solution will come. 
+# Multiple Disease Prediction
+Welcome to the Multiple Disease Prediction project repository! This project was developed by Team Break-A-Leg for the Weal Club at PESU Hackathon Healthack. Our chosen problem statement was "Analysis, Diagnosis, and Encryption of Blood Work Using Machine Learning and Blockchain".
 
-We have designed a module that takes in the blood report and reads all the information using the ***Optical Character Recognition***. Our model is built to diagnose three main diseases namely i) Diabeties ii) Heart Disease iii) Chronic Kidney Disease. As we all know these three diseases required three different set of values to predict whether the patient has acquired the disease or not. Our model is trained in such a way that, for each disease it takes only the values that are required for prediction. All the prediction models are built on various ***Machine Learning and Deep Learning models***. The calculations say that we have an ***overall 92% accuracy*** in predictng the diseases based on the inputs received from the blood report. The additional feature we have added is that while people use our solution, we store and use their data and add it back to our dataset allowing us to increase our accuracy. Now arises a question, what about the personal details that are present on the blood report
+# Project Overview
+## Motivation
+With the growing trend towards home-based medical testing systems, our solution aims to streamline the diagnosis process. Typically, after receiving a medical test report, one would consult a doctor to interpret the results, often incurring consultation charges. Our solution automates this process, providing an initial diagnosis for three major diseases.
 
-We have used ***Block Chain*** concept to keep all the personal information of our users safe. This Block Chain has been built on ***Ethereum Mainnet*** and is successfully deployed on ***Polygon***. In this part of the solution, we pass all the personal infromation like the Name, Contact Information, City to the Block Chain which will hold the encrypted data. All these data has been encrypted on a high level, with high security. We have ensured that the key generated for each blood report data will be available only for that specific patient and their family doctor. This final preoduct has been hosted on web using ***Streamlit***.
+## Diseases Diagnosed
+1. Diabetes
+2. Heart Disease
+3. Chronic Kidney Disease
 
-This total product has been successfully deployed on the web. Do use the link to test our product: https://nishamurthy-22-multiple-disease-prediction-test-0ldo4u.streamlitapp.com/ . To test the product, please download all the datasets and use the "Blood_report.pdf" file given in this repository.
+# Features
+1. **Optical Character Recognition (OCR):** Reads and extracts information from blood reports.
+2. **Machine Learning and Deep Learning Models:** Trained models to diagnose the diseases mentioned above, achieving an overall accuracy of 92%.
+3. **Blockchain for Data Security:** Utilizes Ethereum Mainnet and Polygon to encrypt and store personal information securely.
 
-This project was entitled as an award winning project because of its uniqueness. 
+# How It Works
+1. **Data Extraction:** The module reads blood report information using OCR.
+2. **Disease Prediction:** The extracted data is used by trained ML and DL models to predict the likelihood of Diabetes, Heart Disease, and Chronic Kidney Disease.
+3. **Data Security:** Personal information from the blood report is encrypted and stored on the Blockchain. The encryption ensures that only the patient and their family doctor have access to the data.
+4. **Web Interface:** The entire process is hosted on a web application using Streamlit, providing an intuitive and user-friendly interface.
 
-## Thank You
-### -Team Break-A-Leg
+# Usage
+## Web Application
+Our web application is deployed and accessible via the following link: [Multiple Disease Prediction Test.](https://nishamurthy-22-multiple-disease-prediction-test-0ldo4u.streamlitapp.com/)
+
+## Testing
+To test the product:
+1. Download all datasets from this repository.
+2. Use the "Blood_report.pdf" file provided.
+
+## Technical Details
+### Machine Learning Models
+1. The models are designed to use specific values required for predicting each disease.
+2. Continuous learning from user data to improve accuracy.
+
+### Blockchain Implementation
+1. Built on Ethereum Mainnet and deployed on Polygon.
+2. Ensures high-level encryption and security of personal data.
+3. Unique key generation for each blood report, accessible only by the patient and their family doctor.
+
+# Achievements
+This project was recognized as an award-winning project due to its innovative approach and unique features.
+
+#
+Thank you for exploring our project! We hope you find it useful and innovative.
+
+Happy Diagnosing!
