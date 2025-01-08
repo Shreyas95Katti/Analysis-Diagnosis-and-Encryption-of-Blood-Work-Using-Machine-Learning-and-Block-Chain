@@ -23,7 +23,7 @@ With the growing trend towards home-based medical testing systems, our solution 
 
 # Usage
 ## Web Application
-Our web application is deployed and accessible via the following link: [Multiple Disease Prediction Test.](https://nishamurthy-22-multiple-disease-prediction-test-0ldo4u.streamlitapp.com/)
+Our web application is deployed and accessible via the following link: [Multiple Disease Prediction Test.]([https://nishamurthy-22-multiple-disease-prediction-test-0ldo4u.streamlitapp.com/](https://shreyaskatti-analysis-diagnosis-and-encryption-of-blood-work.streamlit.app/))
 
 ## Testing
 To test the product:
