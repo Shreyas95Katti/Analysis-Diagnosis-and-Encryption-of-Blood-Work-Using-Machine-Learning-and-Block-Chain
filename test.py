@@ -1,20 +1,14 @@
-import pickle
-import streamlit as st
-from streamlit_option_menu import option_menu
+
 from tensorflow.keras.models import load_model
-import pandas as pd
+from streamlit_option_menu import option_menu
+import streamlit as st
+import numpy as np
 import pdfplumber
-import os
-import requests
+import pickle
 # from linker import bigboi
 
-# loading the saved models
-
-# diabetes_model = pickle.load(open('C:\\Users\\nisha\\OneDrive\\Desktop\\projects\\Multiple diseases\\diabetes.sav','rb'))
 
 heart_disease_model = pickle.load(open(r'heartdisease.pkl','rb'))
-
-# kidney_disease_model = pickle.load(open('C:\\Users\\nisha\\OneDrive\\Desktop\\projects\\Multiple diseases\\kidneydisease.sav','rb'))
 
 
 
@@ -65,10 +59,20 @@ if (selected == 'Diabetes Prediction'):
             def ocr(lines, columns):
                 value = []
                 for j in columns:
-                    for i in lines[8:]:
-                        i = i.split(' ')
-                        if i[0] == j:
-                            value.append(float(i[1]))
+                    for i in lines:
+                        if j == 'age':
+                            if j in i:
+                                i = i.split(" ")
+                                value.append(float(i[4]))
+                                
+                        elif j == 'sex':
+                            if j in i:
+                                i = i.split(" ")
+                                value.append(float(0) if i[6] == 'M' else float(1))
+                        else:
+                            i = i.split(' ')
+                            if j == i[0]:
+                                value.append(float(i[1]))
                 return value
                 
             columns1 = ['pregnancies', 'glucose', 'bloodpressure', 'skinthickness', 'insulin', 'BMI', 'diabetespredictionfunction', 'age']
@@ -82,7 +86,7 @@ if (selected == 'Diabetes Prediction'):
             print(columns1)
 
         if st.button(label="Diabetes Test Result"):
-            pred=model.predict([val])
+            pred=model.predict(np.array([val]))
             print(pred[0][0])
             if pred[0][0] > 0.5 :
                 st.error("The Person is Diabetic")
@@ -124,10 +128,20 @@ if (selected == 'Heart Disease Prediction'):
         def ocr(lines, columns):
             value = []
             for j in columns:
-                for i in lines[8:]:
-                    i = i.split(' ')
-                    if i[0] == j:
-                        value.append(float(i[1]))
+                for i in lines:
+                    if j == 'age':
+                        if j in i:
+                            i = i.split(" ")
+                            value.append(float(i[4]))
+                            
+                    elif j == 'sex':
+                        if j in i:
+                            i = i.split(" ")
+                            value.append(float(0) if i[6] == 'M' else float(1))
+                    else:
+                        i = i.split(' ')
+                        if j == i[0]:
+                            value.append(float(i[1]))
             return value
 
         columns2 = ['age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg', 'thalach','exang','oldpeak','slope','ca','thal']
@@ -194,11 +208,21 @@ if (selected == 'Chronic Kidney Disease Prediction'):
                 print(type(name2))
                 value = []
                 for j in columns:
-                    for i in lines[8:]:
-                        i = i.split(' ')
-                        if i[0] == j:
-                            value.append(float(i[1]))
-                return value
+                    for i in lines:
+                        if j == 'age':
+                            if j in i:
+                                i = i.split(" ")
+                                value.append(float(i[4]))
+                                
+                        elif j == 'sex':
+                            if j in i:
+                                i = i.split(" ")
+                                value.append(float(0) if i[6] == 'M' else float(1))
+                        else:
+                            i = i.split(' ')
+                            if j == i[0]:
+                                value.append(float(i[1]))
+                return value #, name
             columns = ['sg', 'al', 'sc', 'hemo', 'pcv', 'wc', 'rc', 'htn']
             val = ocr(lines, columns)
             print(val)
@@ -211,7 +235,7 @@ if (selected == 'Chronic Kidney Disease Prediction'):
         
 
         if st.button(label="Chronic Kidney Disease Test Result"):
-            pred=model.predict([val])
+            pred=model.predict(np.array([val]))
             # print(pred[0][0])
             if pred[0][0] == 1 :
                 st.success("The person does not have any kidney disorder")
