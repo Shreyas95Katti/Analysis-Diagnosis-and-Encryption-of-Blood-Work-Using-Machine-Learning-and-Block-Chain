@@ -33,6 +33,7 @@ if (selected == 'Diabetes Prediction'):
     
     # page title
     st.title('Diabetes Prediction')
+    st.write("Sample blood report can be downloaded from: https://github.com/Shreyas95Katti/Analysis-Diagnosis-and-Encryption-of-Blood-Work-Using-Machine-Learning-and-Block-Chain/blob/main/Blood_report.pdf")
 
 
     def main():
@@ -108,6 +109,7 @@ if (selected == 'Heart Disease Prediction'):
     
     # page title
     st.title('Heart Disease Prediction using ML')
+    st.write("Sample blood report can be downloaded from: https://github.com/Shreyas95Katti/Analysis-Diagnosis-and-Encryption-of-Blood-Work-Using-Machine-Learning-and-Block-Chain/blob/main/Blood_report.pdf")
 
     invoice_pdf = st.file_uploader("Choose a file",type='pdf')
     if invoice_pdf is not None:
@@ -180,6 +182,7 @@ if (selected == 'Chronic Kidney Disease Prediction'):
     
 #     # page title
     st.title('Chronic Kidney Disease Prediction')
+    st.write("Sample blood report can be downloaded from: https://github.com/Shreyas95Katti/Analysis-Diagnosis-and-Encryption-of-Blood-Work-Using-Machine-Learning-and-Block-Chain/blob/main/Blood_report.pdf")
     def main():
     
     
